@@ -2,27 +2,28 @@ import { type BasesPropertyId, type BasesQueryResult, type BasesViewConfig, Keym
 import { useMemo } from "react";
 
 import { useObsidian } from "@/components/Obsidian/Context";
-import { accent, linear } from "@/lib/colors";
-import { getImage, getTitle, isWikiLink, parseWikilink } from "@/lib/properties";
+import { useConfig } from "@/hooks/use-config";
+import { accent } from "@/lib/colors";
+import { isWikiLink, parseWikilink } from "@/lib/properties";
 
-import type { Folder } from "../types";
+import type { GroupItem } from "../types";
 
-
-export const useFolders = (
+export const useGroups = (
   data: BasesQueryResult,
   config: BasesViewConfig,
-): Folder[] => {
+): GroupItem[] => {
   const { app } = useObsidian();
   const accentColor = accent();
-  const imageProperty = config.get("imageProperty") as BasesPropertyId;
-  const colorConfigProperty = (config.get("colorProperty") ?? "note.color") as BasesPropertyId;
-  const iconConfigProperty = (config.get("iconProperty") ?? "note.icon") as BasesPropertyId;
+  const { groupColorProperty, groupIconProperty } = useConfig<{ groupColorProperty: BasesPropertyId; groupIconProperty: BasesPropertyId }>(config, {
+    groupColorProperty: undefined,
+    groupIconProperty: undefined,
+  });
 
-  const [, colorProperty] = colorConfigProperty.split(".");
-  const [, iconProperty] = iconConfigProperty.split(".");
+  const [, colorProperty] = groupColorProperty?.split(".") ?? [];
+  const [, iconProperty] = groupIconProperty?.split(".") ?? [];
 
   return useMemo(() => {
-    const folders: Folder[] = [];
+    const folders: GroupItem[] = [];
 
     for (const group of data.groupedData) {
       const isMulti = group.key.toString().includes(",");
@@ -52,15 +53,14 @@ export const useFolders = (
           }
         }
 
-        const gradient = linear(color, 0.2);
-
-        let folder: Folder | undefined = folders.find((f) => f.title === title);
+        let folder: GroupItem | undefined = folders.find((f) => f.title === title);
         if (!folder) {
           folder = {
             title,
             icon,
-            gradient,
-            files: [],
+            color,
+            file: projectFile,
+            entries: [],
             onClick: (event: React.MouseEvent) => {
               event.preventDefault();
 
@@ -72,25 +72,9 @@ export const useFolders = (
           };
           folders.push(folder);
         }
-        folder.files.push(
-          ...group.entries.map((entry) => {
-            return {
-              id: entry.file.path,
-              file: entry.file,
-              image: getImage(app, entry, imageProperty),
-              title: getTitle(entry),
-              onClick: (event: React.MouseEvent) => {
-                event.preventDefault();
-                event.stopPropagation();
-
-                const modEvent = Keymap.isModEvent(event.nativeEvent);
-                void app.workspace.openLinkText(entry.file.path, "", modEvent);
-              },
-            };
-          }),
-        );
+        folder.entries.push(...group.entries);
       }
     }
     return folders;
-  }, [data, app, accentColor, imageProperty, colorProperty, iconProperty]);
+  }, [data, app, accentColor, colorProperty, iconProperty]);
 };

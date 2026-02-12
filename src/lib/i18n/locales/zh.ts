@@ -117,6 +117,61 @@ export const zh: LocaleTranslations = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "组行为",
+        clickOnGroup: {
+          title: "点击组",
+          expand: "展开",
+          navigate: "导航",
+          none: "无",
+        },
+      },
+      layoutAndDisplay: {
+        title: "组布局",
+        groupShape: {
+          title: "形状",
+          folder: "文件夹",
+          notebook: "笔记本",
+        },
+        groupBorder: {
+          title: "边框",
+          none: "无",
+          solid: "实线",
+          dotted: "点线",
+          dashed: "虚线",
+        },
+        groupSpacing: {
+          title: "间距",
+        },
+        groupCounterPosition: {
+          title: "计数器位置",
+          inside: "内部",
+          outside: "外部",
+          none: "隐藏",
+        },
+        groupTitlePosition: {
+          title: "标题位置",
+          inside: "内部",
+          outside: "外部",
+          none: "隐藏",
+        },
+      },
+      appearance: {
+        title: "组外观",
+        iconProperty: {
+          title: "图标属性",
+        },
+        colorProperty: {
+          title: "颜色属性",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "从链接笔记推断属性",
+        },
+      },
+    },
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -277,11 +332,31 @@ export const zh: LocaleTranslations = {
       },
       display: {
         title: "显示",
+        groupShape: {
+          title: "组形状",
+          folder: "文件夹",
+          notebook: "笔记本",
+        },
         colorizeFiles: {
           title: "为文件着色",
         },
+        groupCounterPosition: {
+          title: "组计数器位置",
+          inside: "内部",
+          outside: "外部",
+          none: "隐藏",
+        },
+        groupTitlePosition: {
+          title: "组标题位置",
+          inside: "内部",
+          outside: "外部",
+          none: "隐藏",
+        },
       },
     },
+    back: "返回",
+    totalItems: "{count} 个文件",
+    singleItem: "{count} 个文件",
   },
   radarChart: {
     options: {

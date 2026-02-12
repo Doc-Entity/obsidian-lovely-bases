@@ -1,13 +1,10 @@
-import type { TFile } from "obsidian";
+import type { BasesEntry } from "obsidian";
 import type { MouseEventHandler } from "react";
 
 
 export type File = {
 	id: string;
-	file: TFile;
-	image: string;
-	title: string;
-	onClick?: MouseEventHandler<HTMLDivElement>;
+	entry: BasesEntry;
 };
 
 export type Folder = {
@@ -16,4 +13,12 @@ export type Folder = {
 	gradient: string;
 	files: File[];
 	onClick?: MouseEventHandler<HTMLDivElement>;
+};
+
+export type FolderColors = {
+  backBg: string;
+  tabBg: string;
+  labelBg: string;
+  frontBg: string;
+  foreground: string;
 };

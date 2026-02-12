@@ -1,0 +1,45 @@
+import type { BasesViewConfig } from "obsidian";
+
+import type { CardConfig } from "@/components/Card/types";
+
+import Group from "./Group";
+import type { GroupConfig, GroupItem } from "./types";
+
+type Props = {
+	cardConfig: CardConfig;
+  groupConfig: GroupConfig;
+	groups: GroupItem[];
+	config: BasesViewConfig;
+};
+
+function Groups({
+	groups,
+	cardConfig,
+  groupConfig,
+	config,
+}: Props) {
+	return (
+		<section className="w-full max-w-5xl mx-auto">
+			<div className="flex flex-wrap gap-12 my-12">
+				{groups.map((group, index) => (
+					<div
+						key={group.title}
+						className="animate-in fade-in slide-in-from-bottom-8 duration-700"
+						style={{ animationDelay: `${200 + index * 100}ms` }}
+					>
+						<Group
+							file={group.file}
+							title={group.title}
+							entries={group.entries}
+							cardConfig={cardConfig}
+              groupConfig={groupConfig}
+							config={config}
+						/>
+					</div>
+				))}
+			</div>
+		</section>
+	);
+}
+
+export default Groups;

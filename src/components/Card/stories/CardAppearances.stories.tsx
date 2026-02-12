@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { ARTICLE_ENTRIES } from "@/__fixtures__/entries";
+import { WithVariants } from "@/stories/decorators/WithVariants";
 
 import * as Layouts from "./CardLayout.stories";
+import CardMeta, { CardStory } from "./meta";
 
-import CardMeta, { WithVariants } from "./meta";
-
-const AppearancesRenderer = WithVariants([
+const AppearancesRenderer = WithVariants(CardStory, [
   {
     ...Layouts.Vertical.args,
   },
@@ -41,7 +41,7 @@ export const Colors: Story = {
     cardSize: 340,
     iconProperty: "note.icon",
     imageAspectRatio: 1,
-    imageProperty: "note.cover",
+    imageProperty: "formula.image",
   } as unknown as Story["args"],
 };
 
@@ -54,7 +54,7 @@ export const BackgroundColors: Story = {
     cardSize: 340,
     iconProperty: "note.icon",
     imageAspectRatio: 1,
-    imageProperty: "note.cover",
+    imageProperty: "formula.image",
   } as unknown as Story["args"],
 };
 
@@ -67,6 +67,6 @@ export const ContentColors: Story = {
     cardSize: 340,
     iconProperty: "note.icon",
     imageAspectRatio: 1,
-    imageProperty: "note.cover",
+    imageProperty: "formula.image",
   } as unknown as Story["args"],
 };

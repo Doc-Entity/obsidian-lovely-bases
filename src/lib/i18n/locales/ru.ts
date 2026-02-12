@@ -117,6 +117,61 @@ export const ru: LocaleTranslations = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "Поведение Группы",
+        clickOnGroup: {
+          title: "Клик по Группе",
+          expand: "Развернуть",
+          navigate: "Перейти",
+          none: "Нет",
+        },
+      },
+      layoutAndDisplay: {
+        title: "Макет Группы",
+        groupShape: {
+          title: "Форма",
+          folder: "Папка",
+          notebook: "Блокнот",
+        },
+        groupBorder: {
+          title: "Граница",
+          none: "Нет",
+          solid: "Сплошная",
+          dotted: "Точечная",
+          dashed: "Пунктирная",
+        },
+        groupSpacing: {
+          title: "Отступ",
+        },
+        groupCounterPosition: {
+          title: "Позиция Счётчика",
+          inside: "Внутри",
+          outside: "Снаружи",
+          none: "Скрыто",
+        },
+        groupTitlePosition: {
+          title: "Позиция Заголовка",
+          inside: "Внутри",
+          outside: "Снаружи",
+          none: "Скрыто",
+        },
+      },
+      appearance: {
+        title: "Внешний вид Группы",
+        iconProperty: {
+          title: "Свойство Иконки",
+        },
+        colorProperty: {
+          title: "Свойство Цвета",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "Выводить Свойства из Связанных Заметок",
+        },
+      },
+    },
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -277,11 +332,31 @@ export const ru: LocaleTranslations = {
       },
       display: {
         title: "Отображение",
+        groupShape: {
+          title: "Форма Группы",
+          folder: "Папка",
+          notebook: "Блокнот",
+        },
         colorizeFiles: {
           title: "Раскрасить Файлы",
         },
+        groupCounterPosition: {
+          title: "Позиция Счётчика Группы",
+          inside: "Внутри",
+          outside: "Снаружи",
+          none: "Скрыто",
+        },
+        groupTitlePosition: {
+          title: "Позиция Заголовка Группы",
+          inside: "Внутри",
+          outside: "Снаружи",
+          none: "Скрыто",
+        },
       },
     },
+    back: "Назад",
+    totalItems: "{count} файлов",
+    singleItem: "{count} файл",
   },
   radarChart: {
     options: {

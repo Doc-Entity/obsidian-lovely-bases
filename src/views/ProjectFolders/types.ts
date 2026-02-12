@@ -1,10 +1,5 @@
-import type { BasesPropertyId } from "obsidian";
 
-export type ProjectFoldersConfig = {
-	/* Data Properties */
-	imageProperty?: BasesPropertyId;
-	iconProperty?: BasesPropertyId;
-	colorProperty?: BasesPropertyId;
-	/* Display */
-	colorizeFiles?: boolean;
-}
+import type { CardConfig } from "@/components/Card/types";
+import type { GroupConfig } from "@/components/Group/types";
+
+export type ProjectFoldersConfig = GroupConfig & CardConfig;

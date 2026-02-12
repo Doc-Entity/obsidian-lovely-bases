@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
 import { ARTICLE_ENTRIES } from "@/__fixtures__/entries";
+import { MONOSPACE_FONTS, SANS_SERIF_FONTS, SERIF_FONTS } from "@/__fixtures__/typographies";
 import { Providers } from "@/stories/decorators";
 
 import { DEFAULTS } from "../constants";
@@ -45,7 +46,7 @@ export const Horizontal: Story = {
     hoverProperty: "note.url",
     hoverStyle: "overlay",
     properties: ["note.author", "note.published"],
-    imageProperty: "note.banner",
+    imageProperty: "formula.image",
     imageAspectRatio: 0.85,
     cardSize: 400,
     imageFit: "cover",
@@ -60,9 +61,9 @@ export const Horizontal: Story = {
     badgeColor: "#768D21",
     tilt: "none",
     linkProperty: 'note.url',
-    titleFont: 'Impact, Georgia, Arial Black, Trebuchet MS',
-    contentFont: 'Arial, Verdana, Tahoma, Segoe UI, Roboto',
-    badgesFont: 'Comic Sans MS, Courier New, Consolas, Arial Narrow, Impact',
+    titleFont: SERIF_FONTS,
+    contentFont: SANS_SERIF_FONTS,
+    badgesFont: MONOSPACE_FONTS,
   },
 };
 
@@ -75,7 +76,7 @@ export const Vertical: Story = {
     hoverProperty: undefined,
     hoverStyle: "none",
     properties: ["note.author", "note.published", "note.excerpt"],
-    imageProperty: "note.banner",
+    imageProperty: "formula.image",
     imageAspectRatio: 0.85,
     cardSize: 340,
     imageFit: "cover",
@@ -90,9 +91,9 @@ export const Vertical: Story = {
     badgeColor: "#768D21",
     tilt: "none",
     linkProperty: 'note.url',
-    titleFont: 'Impact, Georgia, Arial Black, Trebuchet MS',
-    contentFont: 'Arial, Verdana, Tahoma, Segoe UI, Roboto',
-    badgesFont: 'Comic Sans MS, Courier New, Consolas, Arial Narrow, Impact',
+    titleFont: SERIF_FONTS,
+    contentFont: SANS_SERIF_FONTS,
+    badgesFont: MONOSPACE_FONTS,
   },
 };
 
@@ -105,7 +106,7 @@ export const Overlay: Story = {
     hoverProperty: undefined,
     hoverStyle: "none",
     properties: [],
-    imageProperty: "note.banner",
+    imageProperty: "formula.image",
     imageAspectRatio: 1.5,
     cardSize: 340,
     imageFit: "cover",
@@ -120,11 +121,18 @@ export const Overlay: Story = {
     badgeColor: "#768D21",
     tilt: "none",
     linkProperty: 'note.url',
-    titleFont: 'Impact, Georgia, Arial Black, Trebuchet MS',
-    contentFont: 'Arial, Verdana, Tahoma, Segoe UI, Roboto',
-    badgesFont: 'Comic Sans MS, Courier New, Consolas, Arial Narrow, Impact',
+    titleFont: SERIF_FONTS,
+    contentFont: SANS_SERIF_FONTS,
+    badgesFont: MONOSPACE_FONTS,
   },
 };
+
+export const OverlayOnHover: Story = {
+  args: {
+    ...Overlay.args,
+    overlayContentVisibility: "hover",
+  }
+}
 
 export const Polaroid: Story = {
   args: {
@@ -135,7 +143,7 @@ export const Polaroid: Story = {
     hoverProperty: undefined,
     hoverStyle: "none",
     properties: [],
-    imageProperty: "note.banner",
+    imageProperty: "formula.image",
     imageAspectRatio: 1,
     cardSize: 340,
     imageFit: "cover",
@@ -145,8 +153,8 @@ export const Polaroid: Story = {
     badgeColor: "#768D21",
     tilt: "none",
     linkProperty: 'note.url',
-    titleFont: 'Impact, Georgia, Arial Black, Trebuchet MS',
-    contentFont: 'Arial, Verdana, Tahoma, Segoe UI, Roboto',
-    badgesFont: 'Comic Sans MS, Courier New, Consolas, Arial Narrow, Impact',
+    titleFont: SERIF_FONTS,
+    contentFont: SANS_SERIF_FONTS,
+    badgesFont: MONOSPACE_FONTS,
   },
 };

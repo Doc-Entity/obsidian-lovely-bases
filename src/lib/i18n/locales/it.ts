@@ -117,6 +117,61 @@ export const it: LocaleTranslations = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "Comportamento del Gruppo",
+        clickOnGroup: {
+          title: "Clic sul Gruppo",
+          expand: "Espandi",
+          navigate: "Naviga",
+          none: "Nessuno",
+        },
+      },
+      layoutAndDisplay: {
+        title: "Layout del Gruppo",
+        groupShape: {
+          title: "Forma",
+          folder: "Cartella",
+          notebook: "Quaderno",
+        },
+        groupBorder: {
+          title: "Bordo",
+          none: "Nessuno",
+          solid: "Solido",
+          dotted: "Punteggiato",
+          dashed: "Tratteggiato",
+        },
+        groupSpacing: {
+          title: "Spaziatura",
+        },
+        groupCounterPosition: {
+          title: "Posizione del Contatore",
+          inside: "Interno",
+          outside: "Esterno",
+          none: "Nascosto",
+        },
+        groupTitlePosition: {
+          title: "Posizione del Titolo",
+          inside: "Interno",
+          outside: "Esterno",
+          none: "Nascosto",
+        },
+      },
+      appearance: {
+        title: "Aspetto del Gruppo",
+        iconProperty: {
+          title: "Proprietà Icona",
+        },
+        colorProperty: {
+          title: "Proprietà Colore",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "Dedurre Proprietà dalle Note Collegate",
+        },
+      },
+    },
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -277,11 +332,31 @@ export const it: LocaleTranslations = {
       },
       display: {
         title: "Visualizzazione",
+        groupShape: {
+          title: "Forma del Gruppo",
+          folder: "Cartella",
+          notebook: "Quaderno",
+        },
         colorizeFiles: {
           title: "Colora i File",
         },
+        groupCounterPosition: {
+          title: "Posizione del Contatore del Gruppo",
+          inside: "Interno",
+          outside: "Esterno",
+          none: "Nascosto",
+        },
+        groupTitlePosition: {
+          title: "Posizione del Titolo del Gruppo",
+          inside: "Interno",
+          outside: "Esterno",
+          none: "Nascosto",
+        },
       },
     },
+    back: "Indietro",
+    totalItems: "{count} file",
+    singleItem: "{count} file",
   },
   radarChart: {
     options: {

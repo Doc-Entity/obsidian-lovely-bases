@@ -1,21 +1,25 @@
-
+import { useCardConfig } from "@/components/Card/hooks/use-card-config";
+import Groups from "@/components/Group";
+import { useGroupConfig } from "@/components/Group/hooks/use-group-config";
+import { useGroups } from "@/components/Group/hooks/use-groups";
 import { Container } from "@/components/Obsidian/Container";
-import ProjectFolders from "@/components/ProjectFolders";
-import { useFolders } from "@/components/ProjectFolders/hooks/use-folders";
 import type { ReactBaseViewProps } from "@/types";
-import type { ProjectFoldersConfig } from "./types";
 
 const ProjectFoldersView = ({ config, data, isEmbedded }: ReactBaseViewProps) => {
-  const colorizeFiles = config.get(
-    "colorizeFiles",
-  ) as ProjectFoldersConfig["colorizeFiles"];
-  const folders = useFolders(data, config);
+	const groups = useGroups(data, config);
+	const cardConfig = useCardConfig(config);
+  const groupConfig = useGroupConfig(config);
 
-  return (
-    <Container isEmbedded={isEmbedded} style={{ overflowY: "auto" }}>
-      <ProjectFolders folders={folders} colorizeFiles={colorizeFiles} />
-    </Container>
-  );
+	return (
+		<Container isEmbedded={isEmbedded} style={{ overflowY: "auto" }}>
+			<Groups
+				cardConfig={cardConfig}
+				config={config}
+        groupConfig={groupConfig}
+				groups={groups}
+			/>
+		</Container>
+	);
 };
 
 export default ProjectFoldersView;

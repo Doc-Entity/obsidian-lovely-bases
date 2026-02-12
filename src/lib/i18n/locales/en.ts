@@ -115,6 +115,61 @@ export const en = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "Group Behavior",
+        clickOnGroup: {
+          title: "Click on Group",
+          expand: "Expand",
+          navigate: "Navigate",
+          none: "None",
+        },
+      },
+      layoutAndDisplay: {
+        title: "Group Layout",
+        groupShape: {
+          title: "Shape",
+          folder: "Folder",
+          notebook: "Notebook",
+        },
+        groupBorder: {
+          title: "Border",
+          none: "None",
+          solid: "Solid",
+          dotted: "Dotted",
+          dashed: "Dashed",
+        },
+        groupSpacing: {
+          title: "Spacing",
+        },
+        groupCounterPosition: {
+          title: "Counter Position",
+          inside: "Inside",
+          outside: "Outside",
+          none: "Hidden",
+        },
+        groupTitlePosition: {
+          title: "Title Position",
+          inside: "Inside",
+          outside: "Outside",
+          none: "Hidden",
+        },
+      },
+      appearance: {
+        title: "Group Appearance",
+        iconProperty: {
+          title: "Icon Property",
+        },
+        colorProperty: {
+          title: "Color Property",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "Infer Properties from Linked Notes",
+        },
+      },
+    }
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -275,11 +330,31 @@ export const en = {
       },
       display: {
         title: "Display",
+        groupShape: {
+          title: "Group Shape",
+          folder: "Folder",
+          notebook: "Notebook",
+        },
         colorizeFiles: {
           title: "Colorize Files",
         },
+        groupCounterPosition: {
+          title: "Group Counter Position",
+          inside: "Inside",
+          outside: "Outside",
+          none: "Hidden",
+        },
+        groupTitlePosition: {
+          title: "Group Title Position",
+          inside: "Inside",
+          outside: "Outside",
+          none: "Hidden",
+        },
       },
     },
+    back: "Back",
+    totalItems: "{count} files",
+    singleItem: "{count} file",
   },
   radarChart: {
     options: {

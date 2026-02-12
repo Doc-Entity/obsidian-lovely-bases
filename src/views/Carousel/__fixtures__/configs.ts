@@ -1,7 +1,7 @@
 
+import { MONOSPACE_FONTS, SANS_SERIF_FONTS, SERIF_FONTS } from "@/__fixtures__/typographies";
 import { DEFAULTS } from "@/components/Card/constants";
 import type { CarouselConfig } from "@/views/Carousel/CarouselView";
-
 
 export const DEFAULT_CONFIG: CarouselConfig = {
   /** Grouping */
@@ -53,7 +53,7 @@ export const FULL_CONFIG: CarouselConfig = {
   shape: "square",
   tilt: "none",
   /* Image */
-  imageProperty: 'note.cover',
+  imageProperty: 'formula.image',
   imageAspectRatio: 1.5,
   imageFit: "cover",
   reverseContent: false,
@@ -63,9 +63,9 @@ export const FULL_CONFIG: CarouselConfig = {
   showContent: true,
   contentMaxLength: 200,
   /* Appearance */
-  titleFont: 'Impact, Georgia, Arial Black, Trebuchet MS',
-  contentFont: 'Arial, Verdana, Tahoma, Segoe UI, Roboto',
-  badgesFont: 'Comic Sans MS, Courier New, Consolas, Arial Narrow, Impact',
+  titleFont: SERIF_FONTS,
+  contentFont: SANS_SERIF_FONTS,
+  badgesFont: MONOSPACE_FONTS,
   backgroundColorProperty: 'note.color',
   backgroundColorApplyTo: 'image',
   iconProperty: 'note.icon',
@@ -92,7 +92,7 @@ export const HORIZONTAL_LAYOUT_CONFIG: CarouselConfig = {
     'note.published',
     'note.excerpt',
   ],
-  imageProperty: 'note.banner',
+  imageProperty: 'formula.image',
   imageAspectRatio: 0.85,
   cardSize: 400,
   imageFit: 'cover',
@@ -112,7 +112,7 @@ export const OVERLAY_LAYOUT_CONFIG: CarouselConfig = {
   hoverProperty: undefined,
   hoverStyle: 'none',
   properties: [],
-  imageProperty: 'note.cover',
+  imageProperty: 'formula.image',
   imageAspectRatio: 1.5,
   cardSize: 340,
   imageFit: 'cover',
@@ -139,7 +139,7 @@ export const CIRCLE_SHAPE_CONFIG: CarouselConfig = {
   hoverProperty: undefined,
   hoverStyle: 'none',
   properties: [],
-  imageProperty: 'note.cover',
+  imageProperty: 'formula.image',
   imageAspectRatio: 1,
   cardSize: 340,
   imageFit: 'cover',
@@ -164,7 +164,7 @@ export const ROUNDED_SHAPE_CONFIG: CarouselConfig = {
   hoverProperty: undefined,
   hoverStyle: 'none',
   properties: [],
-  imageProperty: 'note.cover',
+  imageProperty: 'formula.image',
   imageAspectRatio: 1,
   cardSize: 340,
   imageFit: 'cover',
@@ -185,7 +185,7 @@ export const POLAROID_LAYOUT_CONFIG: CarouselConfig = {
   ...DEFAULTS,
   layout: 'polaroid',
   cardSize: 280,
-  imageProperty: 'note.banner',
+  imageProperty: 'formula.image',
   imageAspectRatio: 1,
   showTitle: true,
   showPropertyTitles: false,
@@ -195,7 +195,7 @@ export const POLAROID_LAYOUT_CONFIG: CarouselConfig = {
 
 export const WITH_TITLE_SUBTITLE_CONFIG: CarouselConfig = {
 	...HORIZONTAL_LAYOUT_CONFIG,
-  imageProperty: 'note.banner',
+  imageProperty: 'formula.image',
 	groupTitleProperty: "note.sectionTitle",
 	groupSubtitleProperty: "note.sectionSubtitle",
   tilt: "none",

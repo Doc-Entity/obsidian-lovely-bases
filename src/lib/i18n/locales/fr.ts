@@ -117,6 +117,61 @@ export const fr: LocaleTranslations = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "Comportement du Groupe",
+        clickOnGroup: {
+          title: "Clic sur le Groupe",
+          expand: "Développer",
+          navigate: "Naviguer",
+          none: "Aucun",
+        },
+      },
+      layoutAndDisplay: {
+        title: "Disposition du Groupe",
+        groupShape: {
+          title: "Forme",
+          folder: "Dossier",
+          notebook: "Carnet",
+        },
+        groupBorder: {
+          title: "Bordure",
+          none: "Aucune",
+          solid: "Pleine",
+          dotted: "Pointillée",
+          dashed: "Tirets",
+        },
+        groupSpacing: {
+          title: "Espacement",
+        },
+        groupCounterPosition: {
+          title: "Position du Compteur",
+          inside: "Intérieur",
+          outside: "Extérieur",
+          none: "Masqué",
+        },
+        groupTitlePosition: {
+          title: "Position du Titre",
+          inside: "Intérieur",
+          outside: "Extérieur",
+          none: "Masqué",
+        },
+      },
+      appearance: {
+        title: "Apparence du Groupe",
+        iconProperty: {
+          title: "Propriété d'Icône",
+        },
+        colorProperty: {
+          title: "Propriété de Couleur",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "Déduire les Propriétés des Notes Liées",
+        },
+      },
+    },
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -277,11 +332,31 @@ export const fr: LocaleTranslations = {
       },
       display: {
         title: "Affichage",
+        groupShape: {
+          title: "Forme du Groupe",
+          folder: "Dossier",
+          notebook: "Carnet",
+        },
         colorizeFiles: {
           title: "Coloriser les Fichiers",
         },
+        groupCounterPosition: {
+          title: "Position du Compteur du Groupe",
+          inside: "Intérieur",
+          outside: "Extérieur",
+          none: "Masqué",
+        },
+        groupTitlePosition: {
+          title: "Position du Titre du Groupe",
+          inside: "Intérieur",
+          outside: "Extérieur",
+          none: "Masqué",
+        },
       },
     },
+    back: "Retour",
+    totalItems: "{count} fichiers",
+    singleItem: "{count} fichier",
   },
   radarChart: {
     options: {

@@ -1,7 +1,9 @@
 import type { BasesEntry, BasesEntryGroup, BasesPropertyId } from "obsidian";
+
+import { aBasesEntryGroup } from "@/__mocks__";
+
 import { aBasesEntry } from "../../__mocks__/aBasesEntry";
 import { aFile } from "../../__mocks__/aFile";
-import { aBasesEntryGroup } from "@/__mocks__";
 
 const keyFn = (entry: BasesEntry, key: BasesPropertyId) => entry.getValue(key).toString();
 
@@ -155,6 +157,12 @@ Array.from({ length: 25 }, (_) => VIRTUAL_SCROLL_MOVIES_ENTRIES.push(
 
 export const MOVIES_ENTRIES_GROUPED: BasesEntryGroup[] = Object.entries(groupBy(
   MOVIES_ENTRIES,
+  'note.times_watched',
+)).map(([key, entries]) => aBasesEntryGroup(key, entries as BasesEntry[]))
+.sort((a, b) => Number.parseInt(a.key?.toString() ?? '0', 10) - Number.parseInt(b.key?.toString() ?? '0', 10));
+
+export const VIRTUAL_SCROLL_MOVIES_ENTRIES_GROUPED: BasesEntryGroup[] = Object.entries(groupBy(
+  VIRTUAL_SCROLL_MOVIES_ENTRIES,
   'note.times_watched',
 )).map(([key, entries]) => aBasesEntryGroup(key, entries as BasesEntry[]))
 .sort((a, b) => Number.parseInt(a.key?.toString() ?? '0', 10) - Number.parseInt(b.key?.toString() ?? '0', 10));

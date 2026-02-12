@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import iconNodes from "lucide-static/icon-nodes.json";
-import type { BasesEntry } from "obsidian";
+import type { ComponentProps } from "react";
 
 import { aBasesViewConfig } from "@/__mocks__";
 import { type NamespacedTranslationKey, translate } from "@/lib/i18n";
+import { pick } from "@/lib/utils";
 import Providers from "@/stories/decorators/Providers";
 
 import { DEFAULTS } from "../constants";
@@ -13,43 +14,56 @@ import type { CardConfig } from "../types";
 const t = (key: NamespacedTranslationKey<"card">) =>
   translate("en", "card", key);
 
-type StoryProps = {
-  className?: string;
-  entry: BasesEntry;
-  isDraggable?: boolean;
-} & CardConfig;
+export const pickCardConfig = <T extends CardConfig>(props: T): CardConfig => pick<CardConfig>(props, [
+  "backgroundColorApplyTo",
+  "backgroundColorProperty",
+  "badgeColor",
+  "badgeIcon",
+  "badgeProperty",
+  "badgesFont",
+  "cardSize",
+  "contentFont",
+  "contentMaxLength",
+  "hoverProperty",
+  "hoverStyle",
+  "iconProperty",
+  "imageAspectRatio",
+  "imageFit",
+  "imageProperty",
+  "layout",
+  "linkProperty",
+  "overlayContentVisibility",
+  "properties",
+  "reverseContent",
+  "shape",
+  "showContent",
+  "showPropertyTitles",
+  "showTitle",
+  "tilt",
+  "titleFont",
+]);
+
+export type StoryProps = Omit<ComponentProps<typeof Card>, "config">;
 
 export const CardStory = ({
+  adaptToSize = false,
   className,
   entry,
   isDraggable = false,
   ...config
 }: StoryProps) => {
-  const obsConfig = aBasesViewConfig(config);
+  const cardConfig = pickCardConfig(config);
+  const obsConfig = aBasesViewConfig(cardConfig);
+
   return (
     <Card
+      adaptToSize={adaptToSize}
       className={className}
       entry={entry}
       config={obsConfig}
       isDraggable={isDraggable}
-      {...config}
+      {...cardConfig}
     />
-  );
-};
-
-export const WithVariants = (variants: StoryProps[]) => (props: Partial<StoryProps>) => {
-  return (
-    <div className="flex flex-wrap gap-4 w-full">
-      {variants.map((variant, _) => (
-        <CardStory
-          key={_.toString()}
-          {...{
-            ...variant,
-            ...props,
-          }}
-        />
-      ))}
-    </div>
   );
 };
 

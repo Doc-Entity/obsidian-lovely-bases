@@ -117,6 +117,61 @@ export const de: LocaleTranslations = {
       },
     },
   },
+  group: {
+    options: {
+      behavior: {
+        title: "Gruppenverhalten",
+        clickOnGroup: {
+          title: "Klick auf Gruppe",
+          expand: "Erweitern",
+          navigate: "Navigieren",
+          none: "Keine",
+        },
+      },
+      layoutAndDisplay: {
+        title: "Gruppen-Layout",
+        groupShape: {
+          title: "Form",
+          folder: "Ordner",
+          notebook: "Notizbuch",
+        },
+        groupBorder: {
+          title: "Rahmen",
+          none: "Keine",
+          solid: "Durchgehend",
+          dotted: "Gepunktet",
+          dashed: "Gestrichelt",
+        },
+        groupSpacing: {
+          title: "Abstand",
+        },
+        groupCounterPosition: {
+          title: "Zählerposition",
+          inside: "Innen",
+          outside: "Außen",
+          none: "Versteckt",
+        },
+        groupTitlePosition: {
+          title: "Titelposition",
+          inside: "Innen",
+          outside: "Außen",
+          none: "Versteckt",
+        },
+      },
+      appearance: {
+        title: "Gruppen-Erscheinungsbild",
+        iconProperty: {
+          title: "Symbol-Eigenschaft",
+        },
+        colorProperty: {
+          title: "Farb-Eigenschaft",
+        },
+        inferPropertiesFromLinkedNotes: {
+          title: "Eigenschaften aus verknüpften Notizen ableiten",
+        },
+      },
+    },
+  },
   infiniteGallery: {
     options: {
       grid: {
@@ -277,11 +332,31 @@ export const de: LocaleTranslations = {
       },
       display: {
         title: "Anzeige",
+        groupShape: {
+          title: "Gruppenform",
+          folder: "Ordner",
+          notebook: "Notizbuch",
+        },
         colorizeFiles: {
           title: "Dateien einfärben",
         },
+        groupCounterPosition: {
+          title: "Position des Gruppenzählers",
+          inside: "Innen",
+          outside: "Außen",
+          none: "Versteckt",
+        },
+        groupTitlePosition: {
+          title: "Position des Gruppentitels",
+          inside: "Innen",
+          outside: "Außen",
+          none: "Versteckt",
+        },
       },
     },
+    back: "Zurück",
+    totalItems: "{count} Dateien",
+    singleItem: "{count} Datei",
   },
   radarChart: {
     options: {
